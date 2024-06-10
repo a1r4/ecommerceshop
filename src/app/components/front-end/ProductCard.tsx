@@ -3,7 +3,8 @@ import { addToCart } from "@/app/redux/features/cartSlice";
 import toast from "react-hot-toast";
 import { makeToast } from "@/utils/helper";
 import { AiFillStar, AiOutlineShoppingCart, AiOutlineStar } from "react-icons/ai";
-
+import Image from 'next/image';
+import React from "react";
 
 interface propsType 
  {
@@ -38,7 +39,7 @@ const ProductCard = ({ id, img, category, title, price }: propsType) => {
     return (
         <div className="border border-gray-200">
             <div className="text-center border-b border-gray-200">
-                <img className="inline-block w-full h-[200px] object-cover" src={img} alt={title}/> {/* Set fixed height and width */}
+                <Image className="inline-block w-full h-[200px] object-cover" src={img} alt={title} width={500} height={500}/> 
             </div>
 
             <div className="px-8 py-4">

@@ -6,7 +6,7 @@ import axios from 'axios'; // Import axios for making HTTP requests
 import SignInPage from './SignInPage'; // Import your SignInPage component
 import { useAppSelector } from '@/app/redux/hooks';
 import ProfilePage from './ProfilePage';
-
+import Image from 'next/image';
 interface PropsType {
   setShowCart: Dispatch<SetStateAction<boolean>>;
 }
@@ -58,7 +58,7 @@ const Navbar = ({ setShowCart }: PropsType) => {
     <div className="pt-4 bg-white top-0 sticky">
       <div className="container">
         <div className="flex justify-between items-center">
-          <img className="inline-block w-full max-w-[100px] h-[70px] object-cover" src="/logo.jpg" alt="" />
+          <Image className="inline-block w-full max-w-[100px] h-[70px] object-cover" src="/logo.jpg" alt="" width={500} height={500}/>
           <div className="lg:flex hidden w-full max-w-[500px]">
             <input
               className="border-2 border-accent px-6 py-2 w-full"

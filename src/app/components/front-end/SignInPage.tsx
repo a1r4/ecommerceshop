@@ -87,9 +87,9 @@ const SignInPage = ({ setIsLoggedIn, closeSignInModal }: { setIsLoggedIn: Functi
   return (
     <div>
       <h1>Sign In</h1>
-      <form className='flex flex-col gap-4' onSubmit={handleSignIn}>
+      <form className="flex flex-col gap-4" onSubmit={handleSignIn}>
         <div>
-          <label className='block nl-1'>Username:</label>
+          <label className="block ml-1">Username:</label>
           <input
             className="bg-gray-300 w-full px-4 py-2 border outline-pink rounded-md"
             type="text"
@@ -98,7 +98,7 @@ const SignInPage = ({ setIsLoggedIn, closeSignInModal }: { setIsLoggedIn: Functi
           />
         </div>
         <div>
-          <label className='block nl-1'>Password:</label>
+          <label className="block ml-1">Password:</label>
           <input
             className="bg-gray-300 w-full px-4 py-2 border outline-pink rounded-md"
             type="password"
@@ -131,9 +131,9 @@ const SignInPage = ({ setIsLoggedIn, closeSignInModal }: { setIsLoggedIn: Functi
       {/* Modal for Sign Up */}
       {isSignUpModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white p-8 rounded-md modal" ref={modalRef}>
+          <div className="bg-white p-8 rounded-md modal relative" ref={modalRef}>
             <SignUpPage />
-            <IoIosCloseCircleOutline className="absolute top-4 right-4" onClick={closeSignUpModal}/>
+            <IoIosCloseCircleOutline className="absolute top-4 right-4 cursor-pointer" onClick={closeSignUpModal} />
           </div>
         </div>
       )}

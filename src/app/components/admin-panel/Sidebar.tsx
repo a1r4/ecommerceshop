@@ -6,7 +6,8 @@ import { IoAnalytics, IoSettings } from "react-icons/io5";
 import { RiShoppingCartLine } from "react-icons/ri";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
+import Image from 'next/image';
+import React from "react";
 
 const menus = [
   {
@@ -46,7 +47,7 @@ const Sidebar = () => {
 
 return <div className="bg-white w-[300px] min-h-screen p-4 shrink-0">
   <div className="flex items-center gap-4">
-    <img className="size-12 rounded-lg" src="/logo.jpg" alt="logo"/>
+  <Image className="size-12 rounded-lg" src="/logo.jpg" width={500} height={500} alt={""}/>
   <h2 className="text-[20px] font-semibold">Arapi</h2>
   </div>
 

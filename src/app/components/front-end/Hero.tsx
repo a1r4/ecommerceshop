@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import React from 'react';
 const Hero = () => {
     return (
         <div className="bg-[#E3EDF6] mt-4">
@@ -24,7 +26,7 @@ const Hero = () => {
                 </div>
 
                 <div> 
-                    <img className="ml-auto" src="/hero.png" alt="hero" />
+                    <Image className="ml-auto" src="/hero.png" alt="hero" width={50} height={50} />
                 </div>
             </div>
         </div>
