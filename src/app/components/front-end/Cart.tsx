@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction, useState } from 'react'
 import { RxCross1 } from 'react-icons/rx';
 import CartProduct from "./CartProduct";
 import { useAppSelector } from '@/app/redux/hooks';
-import Checkout from './Checkout';
+
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 const stripePromise = loadStripe('pk_test_51PPRcA2Ndzri51qOUfqreowVKbSSuhqL5VVNNaw1R4L8baGRIwXuELCBLWOf9WcTpGBwSpNL6fsoke6fLoMPQMwa00vtKo4Qzo');
@@ -43,7 +43,7 @@ const Cart = ({ setShowCart }: any) => {
             </div>
             <div className='flex justify-between items-center font-medium text-xl py-4'>
                 <p>Total:</p>
-                <p>${getTotal()}.00</p>
+                <p>${getTotal()}</p>
             </div>
             <button className="bg-black text-white text-center w-full rounded-3xl py-2 hover:bg-accent mb-4 mt-4"
                 onClick={() => setView('viewCart')}>
@@ -89,7 +89,7 @@ const Cart = ({ setShowCart }: any) => {
                 />
                 {view === 'cart' && renderCart()}
                 {view === 'viewCart' && renderViewCart()}
-                {view === 'checkout' && <Elements stripe={stripePromise}><Checkout setView={setView} /></Elements>}
+                {view === 'checkout' && <Elements stripe={stripePromise}></Elements>}
             </div>
         </div>
     );

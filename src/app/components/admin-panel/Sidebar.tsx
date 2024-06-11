@@ -23,12 +23,12 @@ const menus = [
   {
     title: "Accounts",
     icon: <MdManageAccounts/>,
-    href: "/admin/users"
+    href: "#"
   },
   {
     title: "Transaction",
     icon: <GrTransaction/>,
-    href: "/admin/orders"
+    href: "#"
   },
   {
     title: "Analytics",

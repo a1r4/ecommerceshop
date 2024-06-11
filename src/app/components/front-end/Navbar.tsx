@@ -2,50 +2,22 @@ import React, { Dispatch, SetStateAction, useState, useEffect } from 'react';
 import Link from 'next/link'; // Import Link from Next.js
 import { AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
 import { BsSearch } from 'react-icons/bs';
-import axios from 'axios'; // Import axios for making HTTP requests
-import SignInPage from './SignInPage'; // Import your SignInPage component
+
+
 import { useAppSelector } from '@/app/redux/hooks';
-import ProfilePage from './ProfilePage';
+
 import Image from 'next/image';
 interface PropsType {
   setShowCart: Dispatch<SetStateAction<boolean>>;
 }
 
 const Navbar = ({ setShowCart }: PropsType) => {
-  const userData = useAppSelector((state) => state.userReducer);
+  
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Track user's authentication status
   const [username, setUsername] = useState('');
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await axios.get(`/api/get_user/${userData._id}`);
-        const { data } = response;
-        setUsername(data.firstName);
-        setIsLoggedIn(true);
-      } catch (error) {
-        setIsLoggedIn(false);
-        console.error('Error fetching user:', error);
-      }
-    };
-
-    fetchUser();
-  }, [userData]); // Update whenever userData changes
-
-  const openSignInModal = () => {
-    setIsSignInModalOpen(true);
-  };
-
-  const closeSignInModal = () => {
-    setIsSignInModalOpen(false);
-  };
-
-  const handleSignOut = () => {
-    // Implement sign-out logic here (e.g., clear user session)
-    // After signing out, reset isLoggedIn state to false
-    setIsLoggedIn(false);
-  };
+ 
 
   const products = useAppSelector((state: any) => state.cartReducer);
   const totalItems = () => {
@@ -81,21 +53,16 @@ const Navbar = ({ setShowCart }: PropsType) => {
               </div>
 
               <div>
-                {isLoggedIn ? (
+                
+                 
+          
                   <>
                     <p className="text-gray-500">
-                      <span className="cursor-pointer" onClick={handleSignOut}>Sign out</span>
-                    </p>
-                    <p className="font-medium">{`Welcome, ${username}`}</p>
-                  </>
-                ) : (
-                  <>
-                    <p className="text-gray-500">
-                      <span className="cursor-pointer" onClick={openSignInModal}>Sign in</span>
+                      <span className="cursor-pointer" >Sign in</span>
                     </p>
                     <p className="font-medium">Your Account</p>
                   </>
-                )}
+              
               </div>
             </div>
 
@@ -113,18 +80,7 @@ const Navbar = ({ setShowCart }: PropsType) => {
         <div className="border-b border-gray-200 pt-4"></div>
       </div>
 
-      {/* Modal for Sign In */}
-      {isSignInModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white p-8 rounded-md">
-            <SignInPage setIsLoggedIn={setIsLoggedIn} closeSignInModal={closeSignInModal} />
-            <button className="absolute top-4 right-4" onClick={closeSignInModal}>
-              Close
-            </button>
-          </div>
-        </div>
-      )}
-      {isLoggedIn && <ProfilePage />}
+      
     </div>
   );
 };
