@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction, useState, useEffect } from 'react';
-import Link from 'next/link'; // Import Link from Next.js
+
 import { AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
 import { BsSearch } from 'react-icons/bs';
 

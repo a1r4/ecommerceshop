@@ -1,7 +1,7 @@
 "use client"
 import { setLoading } from '@/app/redux/features/loadingSlice';
 import { useAppDispatch } from '@/app/redux/hooks';
-import { makeToast } from '@/utils/helper';
+
 import { UploadButton } from '@/utils/uploadthing';
 import axios from 'axios';
 import Image from 'next/image';

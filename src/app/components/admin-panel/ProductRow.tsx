@@ -2,7 +2,7 @@ import { IProduct } from "@/app/admin/dashboard/page";
 import { setLoading } from "@/app/redux/features/loadingSlice";
 import { setProduct } from "@/app/redux/features/productSlice";
 import { useAppDispatch } from "@/app/redux/hooks";
-import { makeToast } from "@/utils/helper";
+
 import axios from "axios";
 import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";

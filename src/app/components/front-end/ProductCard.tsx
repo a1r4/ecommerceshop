@@ -1,7 +1,7 @@
 import { useAppDispatch } from "@/app/redux/hooks"
 import { addToCart } from "@/app/redux/features/cartSlice";
 import toast from "react-hot-toast";
-import { makeToast } from "@/utils/helper";
+
 import { AiFillStar, AiOutlineShoppingCart, AiOutlineStar } from "react-icons/ai";
 import Image from 'next/image';
 import React from "react";
